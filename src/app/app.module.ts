@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubFormComponent } from './github-form/github-form.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GithubFormComponent
+    GithubFormComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
