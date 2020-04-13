@@ -1,4 +1,4 @@
-import { GithubService } from '../github-github/github-request.service';
+import { GithubService } from '../github-request/github-request.service';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-user-profile',
