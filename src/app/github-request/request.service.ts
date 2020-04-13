@@ -21,53 +21,53 @@ export class GithubService {
     throw new Error("Method not implemented.");
     // return Github[];
   }
-  user: User;
-  username: string;
-  repo: Repository;
+  user :User;
+  username :string;
+  repo:Repository;
 
 
-
-  constructor(private http: HttpClient) {
-    this.user = new User("", "");
-    this.username = "Biphyl";
-    this.repo = new Repository("", "", "", "", "")
+  
+  constructor( private http:HttpClient) { 
+    this .user = new User ("","");
+    this .username = "Biphyl";
+    this.repo = new Repository ("","","","","")
   }
-  getProfileInfo() {
-    interface ApiResponse {
-      name: string;
-      avatar_url: string;
-      email: string;
-      public_repos: number;
-      followers: number;
-      following: number;
-      created_at: Date;
+  getProfileInfo(){
+    interface ApiResponse{
+      name :string;
+      avatar_url:string;
+      email:string;
+      public_repos:number;
+      followers:number;
+      following:number;
+      created_at:Date;
 
     }
-    let promise = new Promise((resolve, reject) => {
+    let promise = new Promise ((resolve,reject) => {
       this.http.get<ApiResponse>(
         "https://api.github.com/users/" +
         this.username +
         "?access_token=" +
         environment.AccessToken
       ).toPromise().then((profile) => {
-        this.user.name = profile['owner']['login'];
-
-        this.user.avatar_url = profile['owner']['avatar_url']
-        resolve();
-      },
-        error => {
-          throw new error(
-            "Something went wrong while trying to load resource"
-          );
-          reject(error);
-        }
-      );
-
+            this.user.name = profile['owner']['login'];
+            
+            this.user.avatar_url = profile['owner']['avatar_url']
+            resolve();
+          },
+          error => {
+            throw new error(
+              "Something went wrong while trying to load resource"
+            );
+            reject(error);
+          }
+        );
+        
     })
     return promise;
   }
 
-  getRepository() {
+  getRepository(){
     interface RepoResponse {
       name: string;
       description: string;
@@ -78,9 +78,9 @@ export class GithubService {
       this.http
         .get<RepoResponse>(
           "https://api.github.com/users/" +
-          this.username +
-          "/repos?access_token=" +
-          environment.AccessToken
+            this.username +
+            "/repos?access_token=" +
+            environment.AccessToken
         )
         .toPromise()
         .then(
