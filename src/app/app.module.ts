@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { GithubFormComponent } from './github-form/github-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserRepositoryComponent } from './user-repository/user-repository.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GithubFormComponent,
     NavbarComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    UserRepositoryComponent
   ],
   imports: [
     BrowserModule,
