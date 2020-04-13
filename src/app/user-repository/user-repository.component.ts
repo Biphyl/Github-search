@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-repo',
-  templateUrl: './user-repo.component.html',
-  styleUrls: ['./user-repo.component.css']
+  templateUrl: './user-repository.component.html',
+  styleUrls: ['./user-repository.component.css']
 })
 export class UserRepositoryComponent implements OnInit {
   username: string;
