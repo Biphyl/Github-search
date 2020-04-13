@@ -12,9 +12,9 @@ export class UserRepoComponent implements OnInit {
   repo: any;
   repoService: any;
   constructor(_repoService: GithubService) { }
-  getRepo() {
+  getRepository() {
     this.repoService.updateUserName(this.username);
-    this.repoService.getRepo();
+    this.repoService.getRepository();
     this.repo = this.repoService.repo;
   }
 
