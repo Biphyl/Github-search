@@ -1,4 +1,4 @@
-import { GithubService } from '../github-request/github-request.service';
+import { GithubService } from '../github-request/request.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './user-repo.component.html',
   styleUrls: ['./user-repo.component.css']
 })
-export class UserRepoComponent implements OnInit {
+export class UserRepositoryComponent implements OnInit {
   username: string;
   repo: any;
   repoService: any;
+
   constructor(_repoService: GithubService) { }
   getRepository() {
     this.repoService.updateUserName(this.username);
