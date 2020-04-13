@@ -1,5 +1,5 @@
 
-import { Repo } from './../repo';
+import { Repository } from './../repository';
 import { User } from './../user';
 import { environment } from './../../environments/environment';
 import { Github } from './../github';
@@ -23,14 +23,14 @@ export class GithubService {
   }
   user: User;
   username: string;
-  repo: Repo;
+  repo: Repository;
 
 
 
   constructor(private http: HttpClient) {
     this.user = new User("", "");
     this.username = "Biphyl";
-    this.repo = new Repo("", "", "", "", "")
+    this.repo = new Repository("", "", "", "", "")
   }
   getProfileInfo() {
     interface ApiResponse {
